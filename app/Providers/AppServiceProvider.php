@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Providers;
+
+use App\Models\HistoryNotification;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+
+        // if (env('APP_ENV', 'local')) {
+        //     $this->app['request']->server->set('HTTPS', true);
+        //     URL::forceScheme('https');
+        // }
+        // config(['app.locale' => 'id']);
+        // Carbon::setLocale('id');
+        
+
+        $dateNowID = Carbon::now()->locale('id_ID')->isoFormat('dddd, D MMMM Y');
+        view()->share('dateNowID', $dateNowID);
+
+    }
+}
