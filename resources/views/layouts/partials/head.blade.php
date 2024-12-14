@@ -72,7 +72,7 @@ rel="stylesheet"
         .head-title{
             font-family: sans-serif;
             font-size: 40px;
-            color: #0f2e33;
+            color: #001A88;
             margin-bottom: 0;
         }
         .btn-perintah {
